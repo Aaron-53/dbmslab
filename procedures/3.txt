@@ -1,0 +1,13 @@
+
+
+
+Procedure stat IS
+Begin
+For c IN (Select course_id from student group by course_id having count(*)<5)   
+LOOP 
+UPDATE Course
+      SET status = 'not offered'
+      WHERE course_id = c.course_id;
+   END LOOP;
+END;
+/

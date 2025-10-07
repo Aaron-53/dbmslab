@@ -1,0 +1,19 @@
+Bill
+
+Declare 
+ units number:=&units;
+ bill number;
+Begin
+ if (units<=100) then
+  bill:= units*6;
+ end if;
+ if (units>100) and (units<=300) then
+ bill:= (units-100)*7.5 + 600;
+ end if;
+ if(units>300) then
+ bill:= (units-300)*9.25 + 200*7.5 + 600;
+ end if;
+ dbms_output.put_line('bill ' || bill);
+end;
+  
+

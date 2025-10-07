@@ -1,0 +1,17 @@
+To do a simple loop
+
+Declare
+i number:=&i; //
+BEGIN
+loop
+ dbms_output.put_line(i);
+ i:=i+1;
+ if i>5 then
+ exit;
+ end if;
+ end loop;
+end;
+
+// you cannot use if.. then.. end loop
+
+

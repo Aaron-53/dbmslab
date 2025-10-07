@@ -1,0 +1,36 @@
+Largest of two
+
+Declare 
+ num1 number:=&num1;
+ num2 number:=&num2;
+ largest number;
+Begin
+ largest:=num2;
+ if num1>num2 then
+ largest:=num1;
+ end if;
+ dbms_output.put_line('largest is '|| largest); //use single quote
+end;
+
+
+Largest of three
+Declare 
+ num1 number:=&num1;
+ num2 number:=&num2;
+  num3 number:=&num3;
+ largest number;
+Begin
+ largest:=num2;
+ if (num1>num2) AND (num1>num3) then
+  largest:=num1;
+ end if;
+ if (num2>num3) AND (num2>num1) then
+  largest:=num2;
+ end if;
+ if (num3>num1) AND (num3>num2) then
+  largest:=num3;
+ end if;
+ dbms_output.put_line('largest is '|| largest);
+end;
+
+

@@ -1,0 +1,33 @@
+
+
+Create table bank(account_no number(10), customer_name varchar2(50), balance_amount number(10));
+Insert into bank values(12,’afia’,33);
+
+Create or replace procedure deposit(accno IN number, x IN number)
+IS
+Begin
+ Update bank
+ set balance_amount=x+balance_amount
+ Where account_no=accno;
+End;
+/
+
+Create or replace procedure withdraw(accno in number, x in number)
+IS balance bank.balance_amount%type;
+Begin
+ select balance_amount into balance
+ From bank
+ Where account_no=accno;
+ If balance>1000 then
+ Update bank
+ set balance_amount=balance_amount-x
+ Where account_no=accno;
+ End if;
+End;
+/
+
+Begin
+deposit(12,5);
+withdraw(12,1);
+ End;
+/

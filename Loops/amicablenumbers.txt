@@ -1,0 +1,29 @@
+Amicable numbers
+
+Declare 
+ a number:=&a;
+ b number:=&b;
+ i number;
+ j number;
+asum number:=0; // dont forget to initialize
+bsum number:=0;
+Begin
+ For i in 1..a/2 loop
+  If mod(a,i)=0 then
+  asum:=asum+i;
+  End if;
+End loop;
+ For j in 1..b/2 loop
+  If mod(b,j)=0 then  //don’t forget to change to j
+  bsum:=bsum+j;
+  End if;
+End loop;
+if(bsum=a) AND (asum=b) then
+dbms_output.put_line('Amicable');
+End if;
+End;
+/
+
+
+
+

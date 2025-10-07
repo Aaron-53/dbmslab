@@ -1,0 +1,29 @@
+Case
+
+declare 
+ num1 number:= &num1;
+ num2 number:= &num2;
+ operator char(1) := '&operator';
+ res number;
+begin
+ case operator 
+  when '+' then
+  res:=num1+num2;
+   when '-' then
+  res:=num1-num2; 
+  when '*' then
+  res:=num1*num2;
+   when '/' then
+   if (num2=0) then
+   dbms_output.put_line('no');
+   else 
+   res:=num1/num2;
+   dbms_output.put_line('no.'||res);
+   end if;
+  else 
+    dbms_output.put_line('no');
+end case;
+     dbms_output.put_line('no.'||res);
+end;
+  
+

@@ -1,0 +1,24 @@
+Trigger
+
+Create or replace trigger emptable
+Before insert or update or delete
+On employee 
+for each row
+Begin  //dont forget begin
+ raise_application_error(-34156,’no operations allowed’);
+End;
+/
+
+
+
+Create or replace trigger triger1
+Before insert or update or delete on customers
+FOR EACH ROW
+WHEN (NEW.salary>0)
+Declare
+ Salary_diff number;
+Begin
+ Salary_diff:=(:NEW.salary-:OLD.salary);
+ dbms_output.put_line(Salary_diff);
+End;
+/

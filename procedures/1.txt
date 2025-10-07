@@ -1,0 +1,14 @@
+
+
+Create or replace procedure inser(let in varchar2,ww in varchar2)
+IS
+Begin
+ Insert into rel values(let,ww);
+End;
+/
+Begin
+inser('i','xxx');
+End;
+/
+
+

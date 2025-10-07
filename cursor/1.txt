@@ -1,0 +1,16 @@
+
+
+Declare
+Cursor c is select Name from staff order by Salary desc;
+Names STAFF.Name%type;
+Begin
+Open c;
+For i in 1..6 loop
+Fetch c into Names;
+Exit when c%notfound;
+dbms_output.put_line(Names);
+End loop;
+Close c;
+End;
+
+

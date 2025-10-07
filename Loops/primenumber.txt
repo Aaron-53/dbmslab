@@ -1,0 +1,23 @@
+To generate prime numbers till 20
+
+declare 
+ upplim number := 20;
+ i number;
+ j number;
+ is_prime BOOLEAN;
+begin 
+ dbms_output.put_line('Prime: ');
+ for i in 2..upplim loop
+ is_prime:=true;
+ for j in 2..i/2 loop
+  if MOD(i,j)=0 then
+   is_prime:=false;
+   exit;
+  end if;
+ end loop;
+ if is_prime=true then
+ dbms_output.put_line(i);
+ end if;
+ end loop;  //be careful about the order of end
+end;
+

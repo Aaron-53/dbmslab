@@ -1,0 +1,19 @@
+Square number
+
+Create function sqaanum(a IN number)
+Return number
+IS
+Begin
+ return a*a;
+End;
+/
+
+Declare
+ c number(2);
+Begin
+ c:=sqaanum(4);
+dbms_output.put_line('no '||c);
+End;
+/ 
+
+
