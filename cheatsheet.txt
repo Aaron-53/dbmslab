@@ -340,3 +340,25 @@ BEGIN
   -- optionally assign value to OUT parameter
 END;
 /
+
+
+NO_DATA_FOUND	SELECT returns no rows
+TOO_MANY_ROWS	SELECT returns more than one row
+ZERO_DIVIDE	Division by zero
+VALUE_ERROR	Invalid conversion, e.g., string to number
+DUP_VAL_ON_INDEX	Attempt to insert duplicate in unique column
+LOGIN_DENIED	Invalid login attempt
+OTHERS	Any other unhandled exception
+
+
+BEGIN
+   -- normal PL/SQL code
+EXCEPTION
+   WHEN exception_name1 THEN
+      -- handle exception 1
+   WHEN exception_name2 THEN
+      -- handle exception 2
+   WHEN OTHERS THEN
+      -- handle all other exceptions
+END;
+/
