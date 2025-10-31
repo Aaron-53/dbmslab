@@ -14,3 +14,35 @@ Close c;
 End;
 
 
+DECLARE
+  CURSOR c IS SELECT Name FROM staff ORDER BY Salary DESC;
+  Names STAFF.Name%TYPE;
+BEGIN
+  OPEN c;
+  FETCH c INTO Names;
+
+  WHILE c%FOUND LOOP
+    DBMS_OUTPUT.PUT_LINE(Names);
+    FETCH c INTO Names;
+  END LOOP;
+
+  CLOSE c;
+END;
+/
+
+
+DECLARE
+  CURSOR c IS SELECT Name FROM staff ORDER BY Salary DESC;
+  Names STAFF.Name%TYPE;
+BEGIN
+  OPEN c;
+
+  LOOP
+    FETCH c INTO Names;
+    EXIT WHEN c%NOTFOUND;
+    DBMS_OUTPUT.PUT_LINE(Names);
+  END LOOP;
+
+  CLOSE c;
+END;
+/
