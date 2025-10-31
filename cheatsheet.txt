@@ -317,3 +317,26 @@ set serveroutput on
 
 mysql -u mec -p
 mec
+
+CREATE OR REPLACE TRIGGER trigger_name
+BEFORE | AFTER INSERT | UPDATE | DELETE
+ON table_name
+FOR EACH ROW
+DECLARE
+  -- local variables (optional)
+BEGIN
+  -- logic, e.g., modify :NEW or :OLD values
+END;
+/
+
+CREATE OR REPLACE PROCEDURE procedure_name (
+    param1 IN datatype,
+    param2 OUT datatype  -- optional
+)
+IS
+  -- local variable declarations
+BEGIN
+  -- logic
+  -- optionally assign value to OUT parameter
+END;
+/
